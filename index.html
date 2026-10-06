@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seltigo — E-commerce automation for sellers</title>
+<meta name="description" content="Seltigo helps online sellers list products on multiple marketplaces, manage orders and automate social media, ads and accounting from one panel.">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --blue: #1a56db; --blue-d: #1446b8; --ink: #0f172a; --muted: #5b6475; --line: #e5e9f2; --bg: #f6f8fc; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: var(--ink); background: #fff; line-height: 1.6; }
+  a { color: var(--blue); text-decoration: none; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  header { border-bottom: 1px solid var(--line); background: #fff; position: sticky; top: 0; z-index: 10; }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 20px; color: var(--ink); }
+  .brand-dot { width: 34px; height: 34px; border-radius: 9px; background: var(--blue); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; }
+  .nav-right { display: flex; align-items: center; gap: 14px; }
+  .lang { display: flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+  .lang button { border: none; background: #fff; padding: 6px 10px; font-size: 13px; cursor: pointer; color: var(--muted); }
+  .lang button.on { background: var(--blue); color: #fff; }
+  .btn { display: inline-block; background: var(--blue); color: #fff; padding: 10px 18px; border-radius: 10px; font-weight: 600; font-size: 14px; }
+  .btn:hover { background: var(--blue-d); }
+  .btn.ghost { background: #fff; color: var(--blue); border: 1px solid var(--blue); }
+
+  .hero { background: linear-gradient(180deg, #eef3ff 0%, #fff 100%); padding: 80px 0 64px; text-align: center; }
+  .hero h1 { font-size: 46px; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 18px; }
+  .hero h1 span { color: var(--blue); }
+  .hero p { font-size: 18px; color: var(--muted); max-width: 680px; margin: 0 auto 28px; }
+  .hero .ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+  section { padding: 64px 0; }
+  section.alt { background: var(--bg); }
+  h2 { font-size: 30px; text-align: center; margin-bottom: 10px; letter-spacing: -0.01em; }
+  .lead { text-align: center; color: var(--muted); max-width: 640px; margin: 0 auto 36px; }
+
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .card { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 22px; }
+  .card .ic { font-size: 26px; margin-bottom: 10px; }
+  .card h3 { font-size: 17px; margin-bottom: 6px; }
+  .card p { font-size: 14px; color: var(--muted); }
+  .card .tag { font-size: 12px; color: var(--blue); font-weight: 600; margin-bottom: 4px; display: block; }
+
+  .logos { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+  .logos span { border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: 8px 16px; font-size: 14px; font-weight: 600; color: #334155; }
+
+  .contact { text-align: center; }
+  .contact .mail { font-size: 18px; font-weight: 600; }
+
+  .privacy { max-width: 760px; margin: 0 auto; font-size: 14px; color: var(--muted); }
+  .privacy h3 { color: var(--ink); font-size: 16px; margin: 18px 0 6px; }
+
+  footer { border-top: 1px solid var(--line); padding: 26px 0; font-size: 13px; color: var(--muted); }
+  footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+  @media (max-width: 860px) { .grid { grid-template-columns: 1fr 1fr; } .hero h1 { font-size: 36px; } }
+  @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } .hero h1 { font-size: 30px; } .nav-right .btn { display: none; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#"><span class="brand-dot">S</span>Seltigo</a>
+    <div class="nav-right">
+      <div class="lang">
+        <button data-lang="tr">TR</button>
+        <button data-lang="en">EN</button>
+      </div>
+      <a class="btn" href="https://mustafabahsimb-eng.github.io/hizlisatici-ai/" data-t="login"></a>
+    </div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <h1 data-t-html="heroTitle"></h1>
+    <p data-t="heroText"></p>
+    <div class="ctas">
+      <a class="btn" href="https://mustafabahsimb-eng.github.io/hizlisatici-ai/" data-t="start"></a>
+      <a class="btn ghost" href="#contact" data-t="contactUs"></a>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <h2 data-t="whatTitle"></h2>
+    <p class="lead" data-t="whatLead"></p>
+    <div class="grid">
+      <div class="card"><div class="ic">🛒</div><h3 data-t="f1t"></h3><p data-t="f1d"></p></div>
+      <div class="card"><div class="ic">✨</div><h3 data-t="f2t"></h3><p data-t="f2d"></p></div>
+      <div class="card"><div class="ic">📦</div><h3 data-t="f3t"></h3><p data-t="f3d"></p></div>
+      <div class="card"><div class="ic">🔄</div><h3 data-t="f4t"></h3><p data-t="f4d"></p></div>
+      <div class="card"><div class="ic">📊</div><h3 data-t="f5t"></h3><p data-t="f5d"></p></div>
+      <div class="card"><div class="ic">🔒</div><h3 data-t="f6t"></h3><p data-t="f6d"></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2 data-t="familyTitle"></h2>
+    <p class="lead" data-t="familyLead"></p>
+    <div class="grid">
+      <div class="card"><span class="tag" data-t="p1s"></span><h3>Seltigo</h3><p data-t="p1d"></p></div>
+      <div class="card"><span class="tag" data-t="p2s"></span><h3>Seltigo Social</h3><p data-t="p2d"></p></div>
+      <div class="card"><span class="tag" data-t="p3s"></span><h3>Seltigo Ads</h3><p data-t="p3d"></p></div>
+      <div class="card"><span class="tag" data-t="p4s"></span><h3>Seltigo Content</h3><p data-t="p4d"></p></div>
+      <div class="card"><span class="tag" data-t="p5s"></span><h3>Seltigo Logistics</h3><p data-t="p5d"></p></div>
+      <div class="card"><span class="tag" data-t="p6s"></span><h3>Seltigo Books</h3><p data-t="p6d"></p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 data-t="intTitle"></h2>
+    <p class="lead" data-t="intLead"></p>
+    <div class="logos">
+      <span>Amazon</span><span>Etsy</span><span>eBay</span><span>Trendyol</span><span>Hepsiburada</span><span>N11</span>
+      <span>Walmart</span><span>WooCommerce</span><span>Instagram</span><span>Facebook</span><span>WhatsApp</span><span>Telegram</span>
+      <span>AliExpress</span><span>CJ Dropshipping</span><span>Printify</span>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="contact">
+  <div class="wrap contact">
+    <h2 data-t="contactTitle"></h2>
+    <p class="lead" data-t="contactLead"></p>
+    <a class="mail" href="mailto:mustafabahsi.mb@gmail.com">mustafabahsi.mb@gmail.com</a>
+  </div>
+</section>
+
+<section id="privacy">
+  <div class="wrap privacy">
+    <h2 data-t="privTitle"></h2>
+    <h3 data-t="pv1t"></h3><p data-t="pv1d"></p>
+    <h3 data-t="pv2t"></h3><p data-t="pv2d"></p>
+    <h3 data-t="pv3t"></h3><p data-t="pv3d"></p>
+    <h3 data-t="pv4t"></h3><p data-t="pv4d"></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year"></span> Seltigo</span>
+    <span><a href="#privacy" data-t="privLink"></a> · <a href="#contact" data-t="contactUs"></a></span>
+  </div>
+</footer>
+
+<script>
+const T = {
+  tr: {
+    login: 'Giriş yap',
+    heroTitle: 'Ekle. Yayınla. <span>Her yerde satılsın.</span>',
+    heroText: 'Seltigo, online satıcıların ürünlerini tek panelden onlarca pazaryerine ve sosyal medyaya yüklemesini, siparişlerini yönetmesini ve işlerini otomatikleştirmesini sağlar.',
+    start: 'Hemen başla',
+    contactUs: 'İletişim',
+    whatTitle: 'Ticaret hiç bu kadar kolay olmamıştı',
+    whatLead: 'Ürününü bir kez ekle; içeriği yapay zekâ hazırlasın, Seltigo her kanala göndersin.',
+    f1t: 'Çok kanallı satış', f1d: 'Amazon, Etsy, eBay, Trendyol, Hepsiburada ve daha fazlasına tek tıkla ilan aç.',
+    f2t: 'Yapay zekâ ile içerik', f2d: 'Başlık, açıklama, etiket ve görselleri pazaryerine uygun şekilde otomatik hazırla.',
+    f3t: 'Sipariş ve stok', f3d: 'Tüm kanallardaki siparişleri tek ekranda gör, stok ve fiyatları otomatik eşitle.',
+    f4t: 'Otomasyon', f4d: 'Tekrarlayan işleri sisteme bırak; sen sadece kararları ver.',
+    f5t: 'Kâr ve raporlar', f5d: 'Komisyon, kargo ve maliyetleri hesaplayan net kâr raporları.',
+    f6t: 'Güvenlik', f6d: 'Pazaryeri anahtarların şifreli kasada saklanır, kimseyle paylaşılmaz.',
+    familyTitle: 'Seltigo ailesi',
+    familyLead: 'İhtiyacın olanı seç; hepsi tek hesap ve tek panelde birlikte çalışır.',
+    p1s: 'Ürün ve Mağaza Yönetimi', p1d: 'Çok kanallı ürün yükleme, sipariş ve stok yönetimi.',
+    p2s: 'Sosyal Medya', p2d: 'Ürünlerini Instagram, Facebook, WhatsApp ve Telegram\'da tek tuşla paylaş.',
+    p3s: 'Reklam Yönetimi', p3d: 'Reklam bütçeni kâr getiren ürünlere otomatik yönlendir.',
+    p4s: 'İçerik', p4d: 'Sosyal medya içeriklerini yapay zekâ ile planla ve üret.',
+    p5s: 'Kargo ve İade', p5d: 'Kargo ve iade süreçlerini otomatik yönet.',
+    p6s: 'Muhasebe', p6d: 'Satışlarını muhasebe ve e-fatura sistemlerine otomatik aktar.',
+    intTitle: 'Entegrasyonlar',
+    intLead: 'Seltigo, satıcıların zaten kullandığı platformlarla resmî API\'leri üzerinden çalışır.',
+    contactTitle: 'İletişim',
+    contactLead: 'Sorun, öneri veya iş birliği için bize yaz.',
+    privTitle: 'Gizlilik',
+    pv1t: 'Topladığımız bilgiler', pv1d: 'Hesap bilgilerin (e-posta), bağladığın satış kanallarının erişim bilgileri ve ürün/sipariş verilerin yalnızca hizmeti sunmak için işlenir.',
+    pv2t: 'Nasıl kullanırız', pv2d: 'Veriler; ürünlerini senin adına listelemek, siparişlerini göstermek ve raporlarını hazırlamak için kullanılır. Verilerin satılmaz ve reklam amacıyla üçüncü kişilerle paylaşılmaz.',
+    pv3t: 'Güvenlik', pv3d: 'Erişim anahtarları şifreli kasada saklanır; veriler güvenli sunucularda tutulur ve yalnızca yetkili sistemler erişebilir.',
+    pv4t: 'Haklarınız', pv4d: 'Bağlantılarını istediğin zaman kaldırabilir, verilerinin silinmesini iletişim adresimizden talep edebilirsin.',
+    privLink: 'Gizlilik'
+  },
+  en: {
+    login: 'Sign in',
+    heroTitle: 'Add. Publish. <span>Sell everywhere.</span>',
+    heroText: 'Seltigo lets online sellers list products on dozens of marketplaces and social channels from one panel, manage orders and automate their business.',
+    start: 'Get started',
+    contactUs: 'Contact',
+    whatTitle: 'Commerce has never been this easy',
+    whatLead: 'Add your product once; AI prepares the content and Seltigo sends it to every channel.',
+    f1t: 'Multi-channel selling', f1d: 'Create listings on Amazon, Etsy, eBay, Trendyol, Hepsiburada and more with one click.',
+    f2t: 'AI-powered content', f2d: 'Automatically prepare titles, descriptions, keywords and images for each marketplace.',
+    f3t: 'Orders and inventory', f3d: 'See orders from all channels in one place and keep stock and prices in sync automatically.',
+    f4t: 'Automation', f4d: 'Leave repetitive work to the system; you just make the decisions.',
+    f5t: 'Profit and reports', f5d: 'Net profit reports that account for commissions, shipping and costs.',
+    f6t: 'Security', f6d: 'Marketplace credentials are stored in an encrypted vault and never shared.',
+    familyTitle: 'The Seltigo family',
+    familyLead: 'Pick what you need; everything works together in one account and one panel.',
+    p1s: 'Product & Store Management', p1d: 'Multi-channel listing, order and inventory management.',
+    p2s: 'Social Media', p2d: 'Share products on Instagram, Facebook, WhatsApp and Telegram with one tap.',
+    p3s: 'Ad Management', p3d: 'Automatically move ad budget to the products that make a profit.',
+    p4s: 'Content', p4d: 'Plan and create social media content with AI.',
+    p5s: 'Shipping & Returns', p5d: 'Manage shipping and returns automatically.',
+    p6s: 'Accounting', p6d: 'Send your sales to accounting and e-invoice systems automatically.',
+    intTitle: 'Integrations',
+    intLead: 'Seltigo works with the platforms sellers already use, through their official APIs.',
+    contactTitle: 'Contact',
+    contactLead: 'Write to us for support, feedback or partnerships.',
+    privTitle: 'Privacy',
+    pv1t: 'Information we collect', pv1d: 'Your account details (email), access credentials for the sales channels you connect, and your product/order data are processed only to provide the service.',
+    pv2t: 'How we use it', pv2d: 'Data is used to list your products on your behalf, show your orders and prepare your reports. Your data is never sold or shared with third parties for advertising.',
+    pv3t: 'Security', pv3d: 'Access credentials are kept in an encrypted vault; data is stored on secure servers and only authorized systems can access it.',
+    pv4t: 'Your rights', pv4d: 'You can remove your connections at any time and request deletion of your data via our contact address.',
+    privLink: 'Privacy'
+  }
+};
+
+function setLang(l) {
+  const d = T[l] || T.en;
+  document.documentElement.lang = l;
+  document.querySelectorAll('[data-t]').forEach(el => { el.textContent = d[el.dataset.t] || ''; });
+  document.querySelectorAll('[data-t-html]').forEach(el => { el.innerHTML = d[el.dataset.tHtml] || ''; });
+  document.querySelectorAll('.lang button').forEach(b => b.classList.toggle('on', b.dataset.lang === l));
+  try { localStorage.setItem('seltigo_lang', l); } catch (e) {}
+}
+document.querySelectorAll('.lang button').forEach(b => b.onclick = () => setLang(b.dataset.lang));
+document.getElementById('year').textContent = new Date().getFullYear();
+
+let start = 'en';
+try { start = localStorage.getItem('seltigo_lang') || ((navigator.language || '').toLowerCase().startsWith('tr') ? 'tr' : 'en'); } catch (e) {}
+setLang(start);
+</script>
+</body>
+</html>
